@@ -54,6 +54,7 @@ export class BaseInfo {
         sendData.emit([])
       })
   }
+
   private initDevice() {
     const { screen } = getGlobal()
     const { clientWidth, clientHeight } = document.documentElement

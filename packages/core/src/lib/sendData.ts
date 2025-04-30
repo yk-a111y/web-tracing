@@ -66,7 +66,7 @@ export class SendData {
     if (isFlase(afterSendParams)) return
     if (!this.validateObject(afterSendParams, 'beforeSendData')) return
 
-    debug('send events', sendParams.value)
+    debug('send events1', sendParams.value)
 
     this.executeSend(options.value.dsn, afterSendParams).then((res: any) => {
       executeFunctions(options.value.afterSendData, true, {

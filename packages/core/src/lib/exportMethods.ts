@@ -23,6 +23,8 @@ import { unzip } from '../lib/recordscreen'
  * 解压错误录屏数据
  */
 export function unzipRecordscreen(recordscreen: string) {
+  // console.log('🚀 ~ unzipRecordscreen ~ recordscreen:', recordscreen)
+  // console.log('🚀 ~ unzipRecordscreen ~ recordscreen:', unzip(recordscreen))
   return unzip(recordscreen)
 }
 

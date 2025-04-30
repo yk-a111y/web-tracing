@@ -59,13 +59,17 @@ export class RecordScreen {
       emit: (event, isCheckout) => {
         const lastEvents = this.eventList[this.eventList.length - 1]
         lastEvents.eventList.push(event)
+
+        // isCheckout为标识，表示重新制作了快照
         if (isCheckout) {
+          // 完成当前片段的录制
           if (this.eventList.length > 0) {
             this.eventList[this.eventList.length - 1].scope =
               lastEvents.scope + getTimestamp()
           }
+          // 控制录制片段的数量
           if (this.eventList.length > MAXSCOPELENGTH) {
-            this.eventList.shift()
+            this.eventList.shift() // 删除最老的片段
           }
           this.eventList.push({ scope: `${getTimestamp()}-`, eventList: [] })
         }
@@ -104,6 +108,7 @@ export function getEventList() {
  * @param data 压缩源
  */
 export function zip(data: any): string {
+  console.log('🚀 ~ zip ~ data:', data)
   if (!data) return data
 
   // 判断数据是否需要转为JSON

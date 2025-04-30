@@ -213,6 +213,7 @@ function emit(errorInfo: any, flush = false): void {
     triggerPageUrl: getLocationHref(),
     triggerTime: getTimestamp()
   }
+  console.log('🚀 ~ emit ~ info:', info.recordscreen)
 
   options.value.scopeError
     ? batchError.pushCacheErrorA(info)

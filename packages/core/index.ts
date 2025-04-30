@@ -22,10 +22,10 @@ function init(options: InitOptions): void {
   if (!initOptions(options)) return
 
   // 注册全局
-  initReplace()
-  initBase()
-  initSendData()
-  initLineStatus()
+  initReplace() // *重写事件替换原生事件，以便自动获取 【 错误、性能、页面跳转... 】等信息
+  initBase() // *初始化设备基础信息: clientHeight、screenWidth、platform...等
+  initSendData() // *初始化发送数据的逻辑
+  initLineStatus() // *初始化网络监听
 
   // 注册各个业务
   initError()
